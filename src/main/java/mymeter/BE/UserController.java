@@ -38,4 +38,9 @@ public class UserController {
     public Optional<User> getUserById(@PathVariable String id) {
         return userService.getUserById(id);
     }
+
+    @PutMapping("/users/{id}")
+    public User modifyUser(@RequestBody User newUser, @PathVariable String id) {
+        return userService.modifyUser(newUser, id);
+    }
 }
