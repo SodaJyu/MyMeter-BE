@@ -1,11 +1,9 @@
 package mymeter.BE;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class UserController {
@@ -32,5 +30,12 @@ public class UserController {
     }
 
     @GetMapping("/users")
-    public List<User> getUsers() { return userService.getUsers();}
+    public List<User> getUsers() {
+        return userService.getUsers();
+    }
+
+    @GetMapping("/users/{id}")
+    public Optional<User> getUserById(@PathVariable String id) {
+        return userService.getUserById(id);
+    }
 }
