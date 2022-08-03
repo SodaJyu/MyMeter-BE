@@ -1,4 +1,4 @@
-package mymeter.BE;
+package mymeter.BE.user;
 
 import org.springframework.web.bind.annotation.*;
 import java.util.List;

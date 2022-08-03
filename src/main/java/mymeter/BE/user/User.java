@@ -1,4 +1,4 @@
-package mymeter.BE;
+package mymeter.BE.user;
 
 import lombok.Data;
 import org.springframework.data.annotation.Id;

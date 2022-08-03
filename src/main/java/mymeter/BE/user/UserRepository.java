@@ -1,4 +1,4 @@
-package mymeter.BE;
+package mymeter.BE.user;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;

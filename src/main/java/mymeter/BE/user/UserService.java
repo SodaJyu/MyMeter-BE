@@ -1,4 +1,4 @@
-package mymeter.BE;
+package mymeter.BE.user;
 
 import org.springframework.stereotype.Service;
 import java.util.List;
