@@ -22,7 +22,15 @@ public class UserController {
     }
 
     @PostMapping("/users")
-    public void saveUser(@RequestBody User user) { userRepository.save(user);}
+    public String saveUser(@RequestBody User user) {
+        if (userRepository.findByEmail(user.getEmail()) == null) {
+            userRepository.save(user);
+            return "User successfully created";
+        } else {
+            return "Email already in use";
+        }
+
+    }
 
     @GetMapping("/users")
     public List<User> getUsers() { return userService.getUsers();}
