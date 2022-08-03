@@ -1,7 +1,6 @@
 package mymeter.BE;
 
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -40,7 +39,7 @@ public class UserController {
     }
 
     @PutMapping("/users/{id}")
-    public User modifyUser(@RequestBody User newUser, @PathVariable String id) {
+    public Optional<User> modifyUser(@RequestBody User newUser, @PathVariable String id) {
         return userService.modifyUser(newUser, id);
     }
 

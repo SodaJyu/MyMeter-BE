@@ -21,7 +21,7 @@ public class UserService {
         return userRepository.findById(id);
     }
 
-    public User modifyUser(User newUser, String id) {
+    public Optional<User> modifyUser(User newUser, String id) {
         return userRepository.findById(id)
                 .map(user -> {
                     user.setFirst_name(newUser.getFirst_name());
@@ -29,8 +29,6 @@ public class UserService {
                     user.setEmail(newUser.getEmail());
                     user.setCity(newUser.getCity());
                     return userRepository.save(user);
-                }).orElseGet(() -> {
-                    return userRepository.save(newUser);
                 });
     }
 
