@@ -1,2 +1,8 @@
-package mymeter.BE.wind;public interface WindRepository {
+package mymeter.BE.wind;
+
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface WindRepository extends MongoRepository<Wind, String> {
 }
