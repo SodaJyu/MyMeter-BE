@@ -11,10 +11,10 @@ public class Wind {
     public String id;
     public String type;
     public int powerRating;
-    public float sweptArea;
+    public int sweptArea;
     public int height;
 
-    public Wind(String type, int powerRating, float sweptArea, int height) {
+    public Wind(String type, int powerRating, int sweptArea, int height) {
         this.type = type;
         this.powerRating = powerRating;
         this.sweptArea = sweptArea;
