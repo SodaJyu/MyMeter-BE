@@ -29,4 +29,9 @@ public class WeatherController {
     public Weather getWeatherByCity(@PathVariable String city) {
         return weatherService.findWeatherByCity(city);
     }
+
+    @DeleteMapping("/weather/{id}")
+    public void deleteWeather(@PathVariable String id) {
+        weatherService.deleteWeather(id);
+    }
 }
