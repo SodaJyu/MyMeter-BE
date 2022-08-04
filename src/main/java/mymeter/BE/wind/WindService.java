@@ -8,7 +8,7 @@ import java.util.Optional;
 @Service
 public class WindService {
 
-    WindRepository windRepository;
+    final WindRepository windRepository;
 
     public WindService(WindRepository windRepository) {
         this.windRepository = windRepository;

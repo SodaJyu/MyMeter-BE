@@ -28,7 +28,7 @@ public class WindController {
         return windService.getWind();
     }
 
-    @GetMapping("/users/{id}")
+    @GetMapping("/wind/{id}")
     public Optional<Wind> getWindById(@PathVariable String id) {
         return windService.getWindById(id);
     }
