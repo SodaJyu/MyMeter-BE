@@ -1,6 +1,7 @@
 package mymeter.BE.weather;
 
 import lombok.Data;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Date;
@@ -9,6 +10,8 @@ import java.util.Date;
 @Document
 public class Weather {
 
+    @Id
+    public String id;
     public String city;
     public Date date;
     public String cloudCover;
