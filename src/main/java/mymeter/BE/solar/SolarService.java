@@ -26,7 +26,7 @@ public class SolarService {
         return solarRepository.findById(id)
                 .map(solar -> {
                     solar.directionFacing = newSolar.getDirectionFacing();
-                    solar.kWh = newSolar.getKWh();
+                    solar.kWh = newSolar.getkWh();
                     return solarRepository.save(solar);
                 });
     }
