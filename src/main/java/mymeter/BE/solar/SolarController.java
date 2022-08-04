@@ -18,7 +18,7 @@ public class SolarController {
     }
 
     @PostMapping("/solar")
-    public String saveSolar(Solar solar) {
+    public String saveSolar(@RequestBody Solar solar) {
         solarRepository.save(solar);
         return "Solar Panel Successfully Registered";
     }

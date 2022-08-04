@@ -18,7 +18,7 @@ public class WindController {
     }
 
     @PostMapping("/wind")
-    public String addWind(Wind wind) {
+    public String addWind(@RequestBody Wind wind) {
         windRepository.save(wind);
         return "Wind Turbine Successfully Added";
     }

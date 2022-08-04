@@ -1,9 +1,6 @@
 package mymeter.BE.weather;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -19,7 +16,7 @@ public class WeatherController {
     }
 
     @PostMapping("/weather")
-    public void saveWeather(Weather weather) {
+    public void saveWeather(@RequestBody Weather weather) {
         weatherRepository.save(weather);
     }
 
