@@ -11,9 +11,9 @@ public class Solar {
     @Id
     public String id;
     public String directionFacing;
-    public String kWh;
+    public int kWh;
 
-    public Solar(String directionFacing, String kWh) {
+    public Solar(String directionFacing, int kWh) {
         this.directionFacing = directionFacing;
         this.kWh = kWh;
     }
@@ -22,7 +22,7 @@ public class Solar {
         return directionFacing;
     }
 
-    public String getkWh() {
+    public int getkWh() {
         return kWh;
     }
 
