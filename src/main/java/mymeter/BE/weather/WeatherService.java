@@ -20,4 +20,8 @@ public class WeatherService {
        return weatherRepository.findByCity(city);
     }
 
+    public void deleteWeather(String id) {
+        weatherRepository.deleteById(id);
+    }
+
 }
