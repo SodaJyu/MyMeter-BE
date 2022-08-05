@@ -17,7 +17,10 @@ public class WeatherController {
 
     @PostMapping("/weather")
     public void saveWeather(@RequestBody Weather weather) {
-        weatherRepository.save(weather);
+        if (weatherRepository.findByCity(weather.getCity()) == null
+                && weatherRepository.findByDate(weather.getDate()) == null){
+            weatherRepository.save(weather);
+        }
     }
 
     @GetMapping("/weather")
