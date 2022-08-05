@@ -16,7 +16,7 @@ public class WeatherService {
         return weatherRepository.findAll();
     }
 
-    public Weather findWeatherByCity(String city) {
+    public List<Weather> findWeatherByCity(String city) {
        return weatherRepository.findByCity(city);
     }
 
