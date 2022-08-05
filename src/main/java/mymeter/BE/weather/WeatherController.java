@@ -1,6 +1,7 @@
 package mymeter.BE.weather;
 
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 
@@ -30,6 +31,15 @@ public class WeatherController {
     @GetMapping("/weather/{city}")
     public List<Weather> getWeatherByCity(@PathVariable String city) {
         return weatherService.findWeatherByCity(city);
+    }
+
+    @GetMapping("/weatherAPI")
+    public Object getWeatherFromAPI() {
+        String url = "http://api.weatherapi.com/v1/forecast.json?key=51011ed7b5fb4b1d84d30202220508&q=Tokyo&days=1&aqi=no&alerts=no";
+        RestTemplate restTemplate = new RestTemplate();
+
+        Object weatherData = restTemplate.getForObject(url, String.class);
+        return weatherData;
     }
 
     @DeleteMapping("/weather/{id}")
