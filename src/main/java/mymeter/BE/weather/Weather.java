@@ -19,12 +19,15 @@ public class Weather {
     public int averageWindSpeed;
     public String windDirection;
 
-    public Weather(String city, Date date, String cloudCover, int maxWindSpeed, int averageWindSpeed, String windDirection) {
+    public int uvIndex;
+
+    public Weather(String city, Date date, String cloudCover, int maxWindSpeed, int averageWindSpeed, String windDirection, int uvIndex) {
         this.city = city;
         this.date = date;
         this.cloudCover = cloudCover;
         this.maxWindSpeed = maxWindSpeed;
         this.averageWindSpeed = averageWindSpeed;
         this.windDirection = windDirection;
+        this.uvIndex = uvIndex;
     }
 }
