@@ -15,18 +15,20 @@ public class Weather {
     public String city;
     public Date date;
     public String cloudCover;
-    public int maxWindSpeed;
+    public int windSpeed;
+    public int maxGustSpeed;
     public int averageWindSpeed;
     public String windDirection;
 
     public int uvIndex;
 
-    public Weather(String city, Date date, String cloudCover, int maxWindSpeed, int averageWindSpeed, String windDirection, int uvIndex) {
+    public Weather(String city, Date date, String cloudCover, int windSpeed, int maxGustSpeed, String windDirection, int uvIndex) {
         this.city = city;
         this.date = date;
         this.cloudCover = cloudCover;
-        this.maxWindSpeed = maxWindSpeed;
-        this.averageWindSpeed = averageWindSpeed;
+        this.windSpeed = windSpeed;
+        this.maxGustSpeed = maxGustSpeed;
+        this.averageWindSpeed = windSpeed + maxGustSpeed / 2;
         this.windDirection = windDirection;
         this.uvIndex = uvIndex;
     }
