@@ -37,9 +37,9 @@ public class WeatherController {
         return weatherService.findWeatherByCity(city);
     }
 
-    @GetMapping("/weatherAPI/")
-    public Object getWeatherFromAPI() {
-        String url = "http://api.weatherapi.com/v1/forecast.json?key="+ API_KEY +"&q=London&days=1&aqi=no&alerts=no";
+    @GetMapping("/weatherAPI/{city}")
+    public Object getWeatherFromAPI(@PathVariable String city) {
+        String url = "http://api.weatherapi.com/v1/forecast.json?key="+ API_KEY +"&q="+ city +"&days=1&aqi=no&alerts=no";
         RestTemplate restTemplate = new RestTemplate();
 
         Object weatherData = restTemplate.getForObject(url, String.class);
