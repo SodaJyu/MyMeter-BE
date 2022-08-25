@@ -50,14 +50,17 @@ public class WeatherController {
     @GetMapping("/weather/{city}")
     public List<Weather> getWeatherByCity(@PathVariable String city) {
         if (weatherRepository.findByDateAndCity(LocalDate.now(), city) == null) {
-            //Object currentWeather = getWeatherFromAPI(city);
+            List<Weather> weatherList = new ArrayList<>();
+            Weather currentWeather = getWeatherFromAPI(city);
+            weatherList.add(currentWeather);
+            return weatherList;
 
         }
         return weatherService.findWeatherByCity(city);
     }
 
     @GetMapping("/weatherAPI/{city}")
-    public void getWeatherFromAPI(@PathVariable String city) {
+    public Weather getWeatherFromAPI(@PathVariable String city) {
         String url = "http://api.weatherapi.com/v1/forecast.json?key="+ API_KEY +"&q="+ city;
         RestTemplate restTemplate = new RestTemplate();
         String weatherData = restTemplate.getForObject(url, String.class);
@@ -82,7 +85,8 @@ public class WeatherController {
             averageWind = averageWind + wind;
         }
         Weather daysWeather = new Weather(city, date, (averageWind / hourlyData.size()), maxGust, (averageUV / hourlyData.size()));
-        System.out.println(daysWeather);
+        saveWeather(daysWeather);
+        return daysWeather;
     }
 
     @DeleteMapping("/weather/{id}")
