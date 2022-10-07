@@ -1,12 +1,8 @@
 package mymeter.BE.weather;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonArray;
-import org.bson.json.JsonObject;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.json.JsonParser;
 import org.springframework.boot.json.JsonParserFactory;
-import org.springframework.data.annotation.Id;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
